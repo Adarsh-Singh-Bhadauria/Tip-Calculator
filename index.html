@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b5d05a0511.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="tip_calc.css">
+    <title>Tip Calculator</title>
+</head>
+<body>
+
+    <!-- Created a main container to manage both inner blocks  -->
+    
+    <div class="main_container">
+        <div class="container_1">
+            <p class="text">Bill</p>
+
+            <!-- Calling calculateBill() function as soon as data is entered in the input field -->
+
+            <p>₹ &nbsp; <input onkeyup="calculateBill()" id="bill_input" type="text" placeholder=" 0.00" required></p>
+            <p class="text">Select Tip %</p>
+            <p>&nbsp; &nbsp; <input onkeyup="calculateBill()" id="tip" type="text" placeholder=" 0" required></p>
+            <p class="text">Number of people</p>
+            <span class="operator">
+                <i class="fas fa-user"></i>
+
+                <!-- Calling decreasePeople() function on the click of (-) button -->
+
+                <button onclick="decreasePeople()">-</button>
+                <span id="number_of_people">1</span>
+
+                <!-- Calling increasePeople() function on the click of (+) button -->
+
+                <button onclick="increasePeople()">+</button>
+                
+            </span>
+        </div>
+    
+        <div class="container_2">
+            <div class="container_2_inner">
+                <p class="text">Tip Amount <br> /person</p>
+                <p>₹ &nbsp;<input type="text" id="tip_per_person" placeholder=" 0.00" disabled></p>
+                <p class="text">Total <br> /person</p>
+                <p>₹ &nbsp;<input type="text" id="total_per_person" placeholder=" 0.00" disabled></p>
+            </div>
+
+            <!-- resetAll() function is called when (RESET) button is clicked -->
+
+            <div id="reset_btn"><button onclick="resetAll()">RESET</button></div>
+        </div>
+    </div>
+
+    <script src="tip_calc.js"></script>
+
+</body>
+</html>
